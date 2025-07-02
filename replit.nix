@@ -1,6 +1,6 @@
 { pkgs }: {
   deps = [
-    pkgs.nodejs-22_x
+    pkgs.nodejs-21_x
     pkgs.ffmpeg
   ];
 }
