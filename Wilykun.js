@@ -249,6 +249,12 @@ async function handleCommand(sock, msg) {
             const prefix = config.bot?.prefix || '.';
             const videoCaption = msg.message.videoMessage.caption.trim();
 
+            if (videoCaption === `${prefix}hdvid`) {
+                const { handleHdVidCommand } = require('./WILY_KUN/hdvid.js');
+                await handleHdVidCommand(sock, msg);
+                return;
+            }
+
             if (videoCaption === `${prefix}tourl`) {
                 const { handleTourlCommand } = require('./WILY_KUN/tourl.js');
                 await handleTourlCommand(sock, msg);
@@ -1309,6 +1315,13 @@ ${config.bot.prefix}setdelay 2 → Reaction delay 2 detik`;
                 {
                     const { handleHdCommand } = require('./WILY_KUN/hd.js');
                     await handleHdCommand(sock, msg);
+                }
+                break;
+
+            case 'hdvid':
+                {
+                    const { handleHdVidCommand } = require('./WILY_KUN/hdvid.js');
+                    await handleHdVidCommand(sock, msg);
                 }
                 break;
 
