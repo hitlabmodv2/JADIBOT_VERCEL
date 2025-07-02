@@ -1,0 +1,59 @@
+{
+  "autoReactionStory": {
+    "enabled": true,
+    "mode": "always",
+    "delay": 5000
+  },
+  "settings": {
+    "censorNumber": true,
+    "censorCount": 3,
+    "speedViews": 5,
+    "reactionDelay": 5000
+  },
+  "display": {
+    "showStats": true,
+    "coloredOutput": true
+  },
+  "bot": {
+    "mode": "self",
+    "prefix": ".",
+    "owner": "6282263096788",
+    "botNumber": "6289681008411"
+  },
+  "sticker": {
+    "packname": "WilyKun Bot",
+    "author": "© WilyKun"
+  },
+  "backupTarget": "6289688206739",
+  "rvov2Target": "6282263096788",
+  "autoFeatures": {
+    "typing": true,
+    "recording": false,
+    "online": true,
+    "antidelete": {
+      "enabled": true,
+      "mode": "custom",
+      "privateChat": {
+        "enabled": true,
+        "whitelist": []
+      },
+      "groupChat": {
+        "enabled": true,
+        "whitelist": [
+          "120363419402989015@g.us",
+          "120363383540766761@g.us"
+        ],
+        "whitelistUrls": {}
+      }
+    },
+    "autoUnduhStory": false
+  },
+  "group": {
+    "welcomeMessage": {
+      "enabled": true
+    },
+    "goodbyeMessage": {
+      "enabled": true
+    }
+  }
+}
