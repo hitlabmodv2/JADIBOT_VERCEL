@@ -63,12 +63,43 @@ async function Wily(teks, m, sock) {
         const wame = config.bot?.wame || "https://wa.me/6289681008411";
         const idch = config.bot?.idch || "120363312297133690@newsletter";
 
-        // Ambil foto profil pengguna (hanya 1 gambar ppuser)
+        // Ambil foto profil pengirim pesan dengan akurat
         let ppuser;
         try {
-            ppuser = await sock.profilePictureUrl(m.key.remoteJid, 'image');
-        } catch {
-            ppuser = null; // Tidak ada fallback, hanya ppuser
+            // Tentukan JID yang tepat untuk mengambil foto profil
+            let userJid;
+            
+            // Jika dari grup, ambil participant (pengirim asli)
+            if (m.key.participant) {
+                userJid = m.key.participant;
+            } 
+            // Jika dari chat pribadi, gunakan remoteJid
+            else if (m.key.remoteJid && !m.key.remoteJid.includes('@g.us')) {
+                userJid = m.key.remoteJid;
+            }
+            // Fallback ke remoteJid jika tidak ada participant
+            else {
+                userJid = m.key.remoteJid;
+            }
+            
+            // Ambil foto profil dengan JID yang tepat
+            if (userJid) {
+                ppuser = await sock.profilePictureUrl(userJid, 'image');
+            } else {
+                ppuser = null;
+            }
+        } catch (error) {
+            // Jika gagal ambil foto profil, coba sekali lagi dengan method alternatif
+            try {
+                const alternativeJid = m.key.participant || m.key.remoteJid;
+                if (alternativeJid) {
+                    ppuser = await sock.profilePictureUrl(alternativeJid, 'image');
+                } else {
+                    ppuser = null;
+                }
+            } catch {
+                ppuser = null;
+            }
         }
 
         const nedd = {      
