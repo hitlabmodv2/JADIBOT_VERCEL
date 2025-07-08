@@ -1,0 +1,6 @@
+- pipeline: readsw
+  refs:
+  - refs/heads/RialwayReadSw
+  events:
+  - type: PUSH
+  fail_on_prepare_env_warning: true
