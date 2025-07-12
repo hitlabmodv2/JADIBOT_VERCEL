@@ -1,0 +1,19 @@
+{
+  "OWNER": [
+    "6282263096788"
+  ],
+  "AUTO_RESTART": "350 MB",
+  "SELF": false,
+  "mode": "public",
+  "AUTO_ONLINE": true,
+  "AUTO_TYPING": false,
+  "TYPING_DURATION": 10,
+  "AUTO_RECORD": true,
+  "RECORD_DURATION": 10,
+  "WRITE_STORE": false,
+  "SESSION_NAME": "session",
+  "packName": "Sticker Dibuat Oleh : Wily ",
+  "packPublish": "Dika Ardnt.",
+  "REACTION_DELAY": 10,
+  "REACTION_MODE": "on"
+}

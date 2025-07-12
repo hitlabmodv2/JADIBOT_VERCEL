@@ -1,0 +1,21 @@
+
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./session:/app/session
+      - ./temp:/app/temp
+      - ./DATA:/app/DATA
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "console.log('Health check')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

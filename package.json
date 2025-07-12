@@ -1,0 +1,32 @@
+{
+  "name": "readsw",
+  "version": "1.0.0",
+  "description": "Script untuk membuat auto read status WhatsApp make baileys",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js --max-old-space-size=8192",
+    "pm2": "pm2 start index.js --name hisoka -- --max-old-space-size=8192",
+    "restart:pm2": "pm2 restart hisoka",
+    "stop:pm2": "pm2 stop hisoka"
+  },
+  "keywords": [
+    "autoreadsw",
+    "baileys"
+  ],
+  "author": "Dika Ardnt.",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "npm:@whiskeysockets/baileys@latest",
+    "archiver": "^7.0.1",
+    "axios": "^1.10.0",
+    "cheerio": "^1.1.0",
+    "file-type": "latest",
+    "fluent-ffmpeg": "^2.1.2",
+    "libphonenumber-js": "^1.12.9",
+    "node-webpmux": "^3.1.9",
+    "pino": "^9.7.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
